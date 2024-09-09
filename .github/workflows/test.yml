@@ -13,6 +13,7 @@ jobs:
     with:
       image-name: some-org/some-image
       push: false
+      dockerfile: Dockerfile-python
     secrets:
       DOCKERHUB_USERNAME: "none"
       DOCKERHUB_TOKEN: "none"

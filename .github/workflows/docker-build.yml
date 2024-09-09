@@ -11,6 +11,10 @@ on:
         required: true
         type: boolean
         description: "Whether to push the image to Docker Hub or not"
+      dockerfile:
+        type: string
+        default: "Dockerfile"
+        description: "The name of the Dockerfile (optional)"
     secrets:
       DOCKERHUB_USERNAME:
         required: true
@@ -30,6 +34,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6.7.0
         with:
-          context: .
+          file: ${{ inputs.dockerfile }}
           push: ${{ inputs.push }}
           tags: ${{ inputs.image-name }}

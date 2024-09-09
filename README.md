@@ -22,9 +22,12 @@ jobs:
       image-name: some-org/some-image # adapt to yours
       push: true
     secrets:
+      # only required if you want to push to Docker Hub
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 ```
+
+You can also override the Dockerfile location with the `dockerfile` input.
 
 ## Resources
 
